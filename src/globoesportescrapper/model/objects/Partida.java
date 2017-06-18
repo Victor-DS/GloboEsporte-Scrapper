@@ -95,7 +95,7 @@ public class Partida {
     }
     
     public void setDate(String date) throws ParseException {
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         this.date = df.parse(date);
     }
 }
