@@ -26,6 +26,7 @@ package globoesportescrapper.model.interfaces;
 import globoesportescrapper.model.objects.Rodada;
 import globoesportescrapper.model.objects.Tabela;
 import java.io.IOException;
+import java.util.List;
 
 /**
  *
@@ -34,6 +35,7 @@ import java.io.IOException;
 public interface GloboEsporte {
     
     public Rodada getRodada(String URL) throws IOException;
+    public List<Rodada> getRodadas(String... URL) throws IOException;
     public Tabela getTabela(String URL);
     
 }

@@ -27,7 +27,8 @@ import globoesportescrapper.model.interfaces.GloboEsporte;
 import globoesportescrapper.model.objects.Rodada;
 import globoesportescrapper.model.objects.Tabela;
 import java.io.IOException;
-import org.jsoup.Jsoup;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -39,6 +40,17 @@ public class Scrapper implements GloboEsporte {
     public Rodada getRodada(String URL) throws IOException {
         return RodadaScrapper.scrapIt(URL);
     }
+    
+    @Override
+    public List<Rodada> getRodadas(String... URL) throws IOException {
+        List<Rodada> rodadas = new ArrayList<>();
+        
+        for(String u : URL)
+            rodadas.add(getRodada(u));
+        
+        return rodadas;
+    }
+
 
     @Override
     public Tabela getTabela(String URL) {
